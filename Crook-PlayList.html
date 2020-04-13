@@ -1,0 +1,125 @@
+<html>
+<head>
+<title>Crook</title>
+<script>
+function playPauseSpaceKey(e){
+if(e.code=="Space"){playPause();}}
+document.addEventListener('keyup',playPauseSpaceKey);
+function playSong(i)
+{ 
+	var songSrc = document.getElementById("Crook"+i).src;
+	var audioPlayer=document.getElementById("audioPlayer");
+	var imageDisplayed=document.getElementById("imageDisplay");
+	imageDisplayed.src="0"+i+".jpg";
+	audioPlayer.src=songSrc;
+	audioPlayer.play();
+}
+function playPause()
+{
+	if(audioPlayer.paused==true){audioPlayer.play();} else {audioPlayer.pause();};
+}
+</script>
+<style>
+div>img
+{
+	width: 720;
+	height: 350;
+	display:block;
+	margin:auto;
+}
+audio
+{
+	width: 720;
+	z-index: 1; 
+	display:inherit;
+	margin:auto;
+}
+li img
+{
+	width: 180;
+	height: 135; 
+	padding: 0 4px;
+	display:block;
+}
+.liSongs, li div
+{
+	display: inline;
+	position:relative;
+	float:left;
+	overflow:hidden;
+	padding:3px;	
+}
+span
+{
+	display:block;
+	text-align: center; 
+	background-color:rgba(100,100,100,.2); 
+}
+h1
+{
+	color: red;
+	padding: 20;
+	font-style: underline;
+}
+
+</style>
+</head>
+
+<body>
+<h1>Crook</h1>
+<div 
+<div class="audioDiv">
+	<img src="06.jpg" id="imageDisplay" onClick="playPause()"></img>
+	<audio controls id="audioPlayer">
+		<source src="Crook - 01 - Challa.mp3" id="Crook1"> 
+	</audio>
+	<source src="Crook - 01 - Challa.mp3" id="Crook1">
+	<source src="Crook - 02 - Mere Bina.mp3" id="Crook2">
+	<source src="Crook - 04 - Tujhi Mein.mp3" id="Crook3">
+	<source src="Crook - 06 - Tujhko Jo Paaya.mp3" id="Crook4">
+	<source src="Crook - 07 - Tujhi Mein (Reprise).mp3" id="Crook5">
+	<source src="Crook - 08 - Mere Bina (Unplugged).mp3" id="Crook6">
+</div>
+
+<div class="songList">
+<ul class="ulSongs">
+	<li class="liSongs">
+	<div onClick="playSong(1)">
+		<img src="01.jpg" alt="Challa"></img>
+		<span>Challa</span>
+	</div>
+	</li>
+	<li class="liSongs">
+	<div onClick="playSong(2)">
+		<img src="02.jpg"></img>
+		<span>Mere Bina</span>
+	</div>
+	</li>
+	<li class="liSongs">
+	<div onClick="playSong(3)">
+		<img src="03.jpg"></img>
+		<span>Tujhi Mein</span>
+	</div>
+	</li>
+	<li class="liSongs">
+	<div onClick="playSong(4)">
+		<img src="04.jpg"></img>
+		<span>Tujhko Jo Paaya</span>
+	</div>
+	</li>
+	<li class="liSongs">
+	<div onClick="playSong(5)">
+		<img src="05.jpg"></img>
+		<span>Tujhi Mein (Reprise)</span>
+	</div>
+	</li>
+	<li class="liSongs">
+	<div onClick="playSong(6)">
+		<img src="06.jpg"></img>
+		<span>Mere Bina (Unplugged)</span>
+	</div>
+	</li>
+</ul>
+</div>
+</body>
+</html>
